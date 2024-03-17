@@ -5,6 +5,7 @@ import { Algorithm } from "enums/Algorithm";
 import { getInsertionSortAnims } from "utils/algorithms/insertion-sort";
 import { getMergeSortAnims } from "utils/algorithms/merge-sort";
 import { animateMerge, animateSwitch } from "utils/animations";
+import { getQuickSortAnims } from "utils/algorithms/quick-sort";
 
 interface Props {
   children: React.ReactNode;
@@ -44,6 +45,16 @@ const AlgoProvider: React.FC<Props> = ({ children }) => {
           delay: settings.delay,
           setItems,
           setTotalTime,
+        });
+        break;
+      case Algorithm.quick:
+        const { quickSorted, quickSortAnims } = getQuickSortAnims(items);
+        animateSwitch({
+          newArray: quickSorted,
+          animationArray: quickSortAnims,
+          delay: settings.delay,
+          setItems,
+          setTotalTime
         });
         break;
       default:

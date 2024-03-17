@@ -25,6 +25,7 @@ const Select = (props: SelectProps) => {
       >
         <option value={Algorithm.merge}>Merge sort</option>
         <option value={Algorithm.insertion}>Insertion sort</option>
+        <option value={Algorithm.quick}>Quick sort</option>
       </select>
     </div>
   );
